@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciamento de Pessoas e Valores</h1>
+
+        <!-- Formulário para Adicionar/Editar Item (Nome e Valor) -->
+        <form id="nameForm">
+            <input type="text" id="nameInput" placeholder="Nome do Item/Pessoa" required>
+            <!-- NOVO: Input para o valor -->
+            <input type="number" id="valueInput" placeholder="Valor (R$)" required min="0" step="0.01">
+            <button type="submit" id="submitButton">Adicionar Item</button>
+            <!-- Campo oculto para armazenar a chave (ID) do item sendo editado -->
+            <input type="hidden" id="keyToEdit" value=""> 
+        </form>
+
+        <h2>Lista de Valores (Atualização em Tempo Real)</h2>
+        <!-- NOVO: Display para o total de valores -->
+        <div id="totalValueDisplay" class="total-display">Total Acumulado: R$ 0,00</div>
+
+        <!-- Lista onde os itens serão exibidos -->
+        <ul id="namesList">
+            <li>Carregando itens...</li>
+        </ul>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>
